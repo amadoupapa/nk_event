@@ -63,6 +63,7 @@ h2 {
 			<button class="btn btn-primary" onclick="window.location.href='espace-user.jsp'">Utilisateur</button>
 			<button class="btn btn-primary" onclick="window.location.href='organisateur/espace-organisateur.jsp'">Organisateur</button>
 		</div>
+		<button class="btn btn-primary" onclick="window.location.href='organisateur/espace-organisateur.jsp'">CREER UN COMPTE</button>
 	</div>
 
 	<!-- Bootstrap JS CDN -->
