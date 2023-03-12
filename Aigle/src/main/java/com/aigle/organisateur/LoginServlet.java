@@ -3,6 +3,7 @@ package com.aigle.organisateur;
 import java.io.IOException;
 import javax.persistence.Query;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +47,9 @@ public class LoginServlet extends HttpServlet {
 		        httpSession.setAttribute("organisateur", organisateur);
 		        // Redirection vers la page espace-utilisateur.jsp
 		        response.sendRedirect("espace-organisateur.jsp");
+		        if (organisateur != null) {
+		            System.out.println("Nom de l'organisateur : " + organisateur.getNom());
+		        }
 		    } else {
 		        // Authentification échouée, redirection vers la page login.jsp
 		        response.sendRedirect("login-organisateur.jsp?erreur=true");
@@ -57,6 +61,9 @@ public class LoginServlet extends HttpServlet {
 		    // Fermeture de la session Hibernate
 		    session.close();
 		}
+		HttpSession httpSession =  request.getSession();
+		Organisateur organisateur = (Organisateur)httpSession.getAttribute("organisateur");
+		System.out.println("une addresse depuis session"+organisateur.getAddresse());
 	}
 
 }

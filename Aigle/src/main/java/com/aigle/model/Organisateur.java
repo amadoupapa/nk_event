@@ -6,6 +6,7 @@
 package com.aigle.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -81,7 +82,7 @@ public class Organisateur {
 	}
 
 	
-	@OneToMany(mappedBy = "organisateur")
+	@OneToMany(fetch = FetchType.EAGER,mappedBy = "organisateur")
 	public java.util.Collection<Evenement> evenement;
 
 	

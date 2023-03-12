@@ -56,7 +56,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Evenement</h6>
-                        <a class="collapse-item" href="utilities-color.html">Ajouter</a>
+                        <a class="collapse-item" href="ajouter-evenement.jsp">Ajouter</a>
                         <a class="collapse-item" href="utilities-border.html">Modifier</a>
                         <a class="collapse-item" href="utilities-animation.html">Supprimer</a>
                     </div>

@@ -5,6 +5,8 @@
  ***********************************************************************/
 package com.aigle.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +21,7 @@ public class Evenement {
 	@GeneratedValue
 	private long idEvenement;
 	private java.lang.String nom;
-	private java.util.Date date;
+	private LocalDate date;
 	private java.lang.String heure;
 	private java.lang.String lieu;
 	private java.lang.String description;
@@ -43,12 +45,12 @@ public class Evenement {
 		this.nom = nom;
 	}
 
-	public java.util.Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(java.util.Date date) {
-		this.date = date;
+	public void setDate(LocalDate date2) {
+		this.date = date2;
 	}
 
 	public java.lang.String getHeure() {
@@ -99,37 +101,30 @@ public class Evenement {
 		this.capaciteMax = capaciteMax;
 	}
 
-	/**
-	 * @pdRoleInfo migr=no name=Reservation assc=reserver coll=java.util.Collection
-	 *             impl=java.util.HashSet mult=0..* type=Composition
-	 */
 	@OneToMany(mappedBy = "evenement")
 	public java.util.Collection<Reservation> reservation;
-	/** @pdRoleInfo migr=no name=Organisateur assc=ajouter mult=1..1 side=A */
+	
 	@ManyToOne
 	public Organisateur organisateur;
-	/** @pdRoleInfo migr=no name=Categorie assc=avoir mult=1..1 side=A */
+	
 	@ManyToOne
 	public Categorie categorie;
 
-	/** @pdGenerated default getter */
+	
 	public java.util.Collection<Reservation> getReservation() {
 		if (reservation == null)
 			reservation = new java.util.HashSet<>();
 		return reservation;
 	}
 
-	/** @pdGenerated default iterator getter */
+	
 	public java.util.Iterator getIteratorReservation() {
 		if (reservation == null)
 			reservation = new java.util.HashSet<>();
 		return reservation.iterator();
 	}
 
-	/**
-	 * @pdGenerated default setter
-	 * @param newReservation
-	 */
+	
 	public void setReservation(java.util.Collection<Reservation> newReservation) {
 		removeAllReservation();
 		for (java.util.Iterator iter = newReservation.iterator(); iter.hasNext();)
@@ -158,7 +153,7 @@ public class Evenement {
 			}
 	}
 
-	/** @pdGenerated default removeAll */
+	
 	public void removeAllReservation() {
 		if (reservation != null) {
 			Reservation oldReservation;
@@ -170,15 +165,12 @@ public class Evenement {
 		}
 	}
 
-	/** @pdGenerated default parent getter */
+	
 	public Organisateur getOrganisateur() {
 		return organisateur;
 	}
 
-	/**
-	 * @pdGenerated default parent setter
-	 * @param newOrganisateur
-	 */
+	
 	public void setOrganisateur(Organisateur newOrganisateur) {
 		if (this.organisateur == null || !this.organisateur.equals(newOrganisateur)) {
 			if (this.organisateur != null) {
@@ -193,15 +185,12 @@ public class Evenement {
 		}
 	}
 
-	/** @pdGenerated default parent getter */
+	
 	public Categorie getCategorie() {
 		return categorie;
 	}
 
-	/**
-	 * @pdGenerated default parent setter
-	 * @param newCategorie
-	 */
+	
 	public void setCategorie(Categorie newCategorie) {
 		if (this.categorie == null || !this.categorie.equals(newCategorie)) {
 			if (this.categorie != null) {

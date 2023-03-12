@@ -60,10 +60,23 @@ h2 {
 		<h1>NK EVENT</h1>
 		<h2>Se connecter en tant que :</h2>
 		<div class="row justify-content-center">
-			<button class="btn btn-primary" onclick="window.location.href='espace-user.jsp'">Utilisateur</button>
-			<button class="btn btn-primary" onclick="window.location.href='organisateur/espace-organisateur.jsp'">Organisateur</button>
+			<button class="btn btn-primary"
+				onclick="window.location.href='espace-user.jsp'">Utilisateur</button>
+			<button class="btn btn-primary"
+				onclick="window.location.href='organisateur/login-organisateur.jsp'">Organisateur</button>
 		</div>
-		
+		<h3 class="text-center mb-4 mt-5 text-warning">Pas de compte ?</h3>
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<a href="inscription-user.jsp" class="mb-3">Créer un
+					compte utilisateur</a>
+			</div>
+			<div class="col-md-6">
+				<a href="organisateur/inscription" class="mb-3">Créer un
+					compte organisateur</a>
+			</div>
+		</div>
+
 	</div>
 
 	<!-- Bootstrap JS CDN -->
